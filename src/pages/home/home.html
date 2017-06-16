@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>SIGN IN</h2>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+  <button ion-button (click)="login()">login</button>
+
+  <ion-list>
+
+    <ion-item *ngFor= "let item of comment;let i=index;">
+      <ion-row>
+        <p>{{item}}</p>
+
+      </ion-row>
+      <button ion-button [color]="secondary" (click)="delete(i)">delete</button>
+
+    </ion-item>
+  </ion-list>
+<ion-list>
+  <ion-item>
+    <ion-label floating>addcomment</ion-label>
+
+    <ion-input type="text" [(ngModel)]="addcomment"></ion-input>
+  </ion-item>
+</ion-list>
+  <button ion-button (click)="addcomments()">add</button>
+
+
+
+
+  <ion-list>
+
+    <ion-item *ngFor= "let item of students; let j= index;">
+      <ion-row>
+        <p>{{item.name}}</p>
+        <p>{{item.batch}}</p>
+        <p>{{item.year}}</p>
+        <button ion-button (click)="delete1(j)" >delete</button>
+      </ion-row>
+
+    </ion-item>
+
+  <ion-item>
+  <ion-label floating>name</ion-label>
+  <ion-input type ="text"[(ngModel)]="student_name"></ion-input>
+  </ion-item>
+
+    <ion-item>
+
+    <ion-label floating>batch</ion-label>
+  <ion-input type ="text"[(ngModel)]="student_batch"></ion-input>
+    </ion-item>
+
+      <ion-item>
+
+      <ion-label floating>year</ion-label>
+  <ion-input type ="text"[(ngModel)]="student_year"></ion-input>
+  </ion-item>
+
+  </ion-list>
+  <button ion-button (click)="addstudent()">add</button>
+
+</ion-content>
+
